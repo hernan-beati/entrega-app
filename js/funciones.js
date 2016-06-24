@@ -51,7 +51,7 @@ function checkConection(){
 		var datosUsuario = $("#nombredeusuario").val();
 		var datosPassword = $("#clave").val();
 		
-	  	archivoValidacion = "http://localhost/multimedia/php/validation.php";
+	  	archivoValidacion = "http://juanmamigliore.com.ar/app-php/validation.php";
 		
 		$.ajax({ 
 			url: archivoValidacion,
@@ -97,7 +97,7 @@ function checkConection(){
 
 			$icons='<a href="#" class="fav-handler"><img src="images/myImg/star.png"></a><a href="#" class="delete-handler"><img src="images/myImg/trash.png" alt=""></a>'
 
-			$.getJSON( "http://localhost/multimedia/php/conexion.php").done(function(resultados) {
+			$.getJSON( "http://juanmamigliore.com.ar/app-php/conexion.php").done(function(resultados) {
 
 			$.each(resultados, function(i, campo){
 
@@ -134,7 +134,7 @@ function checkConection(){
 	function consultaAjax(value,id_value,titulo_val,contenido_val,fecha_val,categoria_val){
 
 		$.ajax({ 
-			url: 'http://localhost/multimedia/php/consultas.php',
+			url: 'http://juanmamigliore.com.ar/app-php/consultas.php',
 		    data: {
 		    	action: value,
 		    	id: id_value,
