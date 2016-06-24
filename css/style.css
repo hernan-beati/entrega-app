@@ -1,0 +1,267 @@
+@charset "UTF-8";
+/* Colors */
+/* !Colors */
+/* General */
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333; }
+
+header {
+  margin-top: 20px;
+  height: 120px;
+  background: url(../images/myImg/logo.png) no-repeat center; }
+
+p, span, h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 0 !important; }
+
+.header {
+  background-color: #303030 !important;
+  color: #fcfcfc !important;
+  border: none !important;
+  text-shadow: 0 0 0 !important;
+  font-size: 14px; }
+
+.lightGreen {
+  background-color: #509796; }
+
+.yellow {
+  background-color: #e9a43d; }
+
+.red {
+  background-color: #d66a5b; }
+
+.blueMenu {
+  background-color: #347ca5; }
+
+.nonMargin {
+  margin: 0 !important; }
+
+.nonPadding {
+  padding: 0 !important; }
+
+.separator {
+  height: 8px; }
+
+.wrapper {
+  overflow: hidden; }
+
+.date {
+  font-size: 12px;
+  font-style: italic;
+  color: #5b5b5b;
+  margin-top: 5px; }
+
+.card {
+  -moz-box-shadow: 5px 5px 5px #888888;
+  -webkit-box-shadow: 5px 5px 5px #888888;
+  box-shadow: 5px 5px 5px #888888;
+  margin: 5px 0px 20px 0px; }
+
+.card-icons {
+  float: right; }
+  .card-icons img {
+    margin: 10px; }
+
+.fixed {
+  position: fixed;
+  width: 100%; }
+
+.relative {
+  position: relative; }
+
+/* !General */
+/* Dynamic classes */
+.fav:after {
+  margin: 10px;
+  content: url(../images/myImg/fav.png); }
+
+/* !Dynamic classes*/
+/* Navbar */
+.back {
+  background-color: transparent !important;
+  border: none !important;
+  content: url(../images/myImg/arrow-l.png);
+  box-shadow: none;
+  padding-top: 5px; }
+
+/* Reset Button hover/active*/
+.ui-focus,
+.ui-btn:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important; }
+
+.ui-input-text.ui-focus,
+.ui-input-search.ui-focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important; }
+
+/* !Reset Button hover/active*/
+/* !Navbar*/
+#welcomeScreen {
+  background-color: #347ca5; }
+
+#noInternet {
+  background-color: #347ca5;
+  text-align: center; }
+  #noInternet h2 {
+    color: #fff; }
+
+/* Login */
+#login {
+  background-color: #254561;
+  text-align: center;
+  text-shadow: 0 0 0 !important; }
+  #login h1 {
+    color: #4d98b8;
+    margin-top: 0; }
+  #login form {
+    margin: 20px; }
+  #login input {
+    color: #5b5b5b;
+    padding-left: 40px; }
+  #login .ico {
+    margin-top: 8px;
+    margin-left: 10px;
+    line-height: 6px; }
+  #login .user {
+    background: url(../images/myImg/user.gif) no-repeat; }
+  #login .lock {
+    background: url(../images/myImg/lock.gif) no-repeat; }
+  #login .ui-btn {
+    margin: 20px;
+    text-shadow: 0 0 0 !important;
+    border: 0; }
+  #login #btn-login {
+    background-color: #4d98b8;
+    color: #fcfcfc; }
+  #login #facebook {
+    color: #254561; }
+  #login p {
+    color: #fcfcfc; }
+    #login p a {
+      color: #fcfcfc;
+      text-decoration: none; }
+
+/* !Login */
+/* Menu*/
+#menu {
+  font-size: 0.7em; }
+  #menu .header {
+    background-color: #303030;
+    color: #fcfcfc;
+    text-shadow: 0 0 0 !important; }
+  #menu ul {
+    text-align: center; }
+    #menu ul li {
+      width: 50%;
+      height: 0;
+      padding-bottom: 50%; }
+      #menu ul li img {
+        margin: auto;
+        padding-top: 15%;
+        width: 40%;
+        display: block;
+        padding-bottom: 10%; }
+      #menu ul li a {
+        color: white;
+        overflow: hidden;
+        text-decoration: none;
+        text-shadow: 0 0 0 !important; }
+
+/* !Menu */
+/* Agenda */
+#eventos {
+  background-color: #f2f2f2;
+  font-size: 10px; }
+  #eventos .month {
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #347ca5;
+    color: white; }
+  #eventos ul {
+    margin: 0;
+    padding: 0; }
+    #eventos ul li {
+      margin-bottom: 7px;
+      padding: 0; }
+  #eventos .card-wrapper {
+    margin-top: 80px; }
+  #eventos .card {
+    background-color: #fcfcfc;
+    padding: 0 5px;
+    overflow: hidden;
+    border-left: 5px solid #d66a5b; }
+    #eventos .card .wrapper h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: lighter; }
+    #eventos .card .wrapper .img {
+      float: left;
+      width: 15%;
+      text-align: center; }
+    #eventos .card .wrapper .text {
+      float: left;
+      width: 100%;
+      font-size: 12px; }
+  #eventos .footer {
+    text-align: center;
+    padding: 10px 0; }
+    #eventos .footer a {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      margin: 0;
+      padding: 0; }
+
+#agregarEvento label {
+  font-size: 20px;
+  color: #254561; }
+#agregarEvento textarea {
+  height: 120px !important;
+  background-color: #fff !important;
+  margin: 0 !important; }
+#agregarEvento .ico {
+  padding-left: 35px;
+  margin-top: 8px;
+  margin-left: 5px; }
+#agregarEvento .descripcion {
+  background: url(../images/myImg/description.gif) no-repeat; }
+#agregarEvento .tag {
+  background: url(../images/myImg/tag.gif) no-repeat; }
+
+#frase {
+  background-color: #d66a5b;
+  text-align: center; }
+  #frase .fraseCompleta {
+    border-bottom: 1px solid #fcfcfc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden; }
+    #frase .fraseCompleta img {
+      width: 50%; }
+    #frase .fraseCompleta p {
+      font-family: 'Bad Script', cursive;
+      color: #fcfcfc;
+      font-size: 1.5em; }
+    #frase .fraseCompleta .author {
+      float: right;
+      font-size: 20px;
+      font-style: italic;
+      margin-right: 10px;
+      font-style: italic; }
+
+/* !Agenda*/
+/* 
+
+* Para que una imagen ocupe toda la l├¡nea la convierto en bloque display:block;
+* Para que un cuadrado de bloques (div,li,lo que sea) sean l├¡quidos tengo que
+* jugar con su margen y padding: 	width: 50%;
+									height: 0;
+									padding-bottom: 50%;
+
+*/
+
+/*# sourceMappingURL=style.css.map */

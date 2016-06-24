@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">	
+	<title>Multi Medias</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.datepicker.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
+</head>
+<body>
+	
+
+	<!-- Welcome -->
+
+	<div id="welcomeScreen" data-role="page">
+		<div data-role="content">
+			<h1>Welcome!</h1>
+		</div>
+	</div>
+
+	<!-- /Welcome -->
+
+	<!-- No Internet Screen -->
+	<div id="noInternet" data-role="page">
+
+		<div data-role="content">
+			<img src="images/myImg/logo.png" alt="">
+			<h2>No tienes conexión</h2>
+			<a href="#" class="ui-btn ui-corner-all" id="intentarNuevamente">Intentar Nuevamente</a>
+		</div>
+		
+	</div>
+
+	<!-- /No Internet Screen -->
+
+	<!-- Login-->
+	<div id="login" data-role="page">
+			
+		<header></header>
+		<h1>multi medias</h1>
+
+		<div data-role="content">
+			
+			<form id="login-form">
+				<input class="ico user" type="text" name="nombredeusuario" id="nombredeusuario" required>
+				<input class="ico lock" type="password" name="clave" id="clave" required>
+				<input type="submit" value="Iniciar Sesión" id=btn-login class="ui-corner-all" style="width:100%; border:0; height:40px; font-weight:bold;">
+			</form>
+
+			<a href="#inicio" class="ui-btn ui-corner-all">Registrarse con <span id="facebook">Facebook</span></a>
+			<p>¿No tienés una cuenta? <a href="#">Registrate</a></p>
+
+		</div>
+	</div>
+	<!-- /Login -->
+
+
+	<!-- Menu -->
+	<div id="menu" data-role="page">
+		
+		<div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
+			<h1>Menu</h1>
+		</div>
+
+		<ul class="ui-grid-a nonMargin">
+			<li class="ui-block-a blueMenu"><a href="#eventos" data-transition="flow"><img src="images/myImg/agenda.png">Agenda</a></li>
+			<li class="ui-block-b lightGreen"><a href="#"><img src="images/myImg/chat.png">Mensajes</a></li>
+			<li class="ui-block-a yellow"><a href="#"><img src="images/myImg/salvavidas.png">Salva Vidas</a></li>
+			<li class="ui-block-b red"><a href="#frase" data-transition="flow"><img src="images/myImg/pin.png">Frase del Día</a></li>
+			<li class="ui-block-a lightGreen"><a href="http://www.maimonidesvirtual.com.ar/default.asp"><img src="images/myImg/campus.png">Campus</a></li>
+			<li class="ui-block-b blueMenu"><a href="#"><img src="images/myImg/configuracion.png">Configuración</a></li>
+		</ul>
+	</div>
+	<!-- /Menu -->
+
+	<!-- Eventos -->
+	<div id="eventos" data-role="page">
+
+		<div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
+			<a href="#menu" class="back" data-transition="flow" data-direction="reverse"></a>
+			<h1>Eventos</h1>
+		</div>
+		<div data-role="tabs" id="tabs" class="nonPadding">		
+			<div style="position: fixed; overflow: hidden; width: 100%;">
+					<div class="month"><h2 class="nonMargin">Enero</h2></div>
+					<div data-role="navbar" id="myNav">
+					<ul>
+						<li><a href="#personales"  class="ui-btn-active">Personales</a></li>
+						<li><a href="#colectivos" >Colectivos</a></li>
+						<li><a href="#favoritos">Favoritos</a></li>
+					</ul>
+				</div>
+
+			</div>
+				
+				<div id="favoritos" class="ui-content active">
+					<div class="card-wrapper">
+
+					</div>
+				</div>
+		
+				<div id="personales" class="ui-content">
+					<ul class="card-wrapper">
+					</ul>
+				</div>
+
+				<div id="colectivos" class="ui-content">
+
+					<ul class="card-wrapper">
+					</ul>	
+				</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="footer">
+			<a href="#agregarEvento" data-transition="slideup"><img src="images/myImg/addtask.png" alt=""></a>
+		</div>
+
+	<!-- Popup Month -->
+
+		<div data-role="popup" id="monthPopup">
+
+			<ul style="min-width:210px;">
+				<li><a href="#">Enero</a></li>
+				<li><a href="#">Febrero</a></li>
+				<li><a href="#">Marzo</a></li>
+				<li><a href="#">Abril</a></li>
+				<li><a href="#">Mayo</a></li>
+				<li><a href="#">Junio</a></li>
+				<li><a href="#">Julio</a></li>
+				<li><a href="#">Agosto</a></li>
+				<li><a href="#">Septiembre</a></li>
+				<li><a href="#">Octubre</a></li>
+				<li><a href="#">Noviembre</a></li>
+				<li><a href="#">Diciembre</a></li>
+			</ul>
+		</div>
+	<!-- !Popup Month -->
+	</div>
+
+	<!-- /Eventos -->
+
+	<!-- Nuevo Eventos -->
+
+	<div id="agregarEvento" data-role="page">
+
+		<div data-role="header" class="header" data-position="fixed" data-tap-toggle="false">
+			<a href="#eventos" class="back" data-transition="slidedown"></a>
+			<h1>Nuevo Evento</h1>
+		</div>
+
+		<div data-role="content">
+			
+			<form action="javascript:void(0);" id="nuevoEvento" method="post">
+				
+				<label for="titulo">Título del Evento</label>
+				<input class="ico tag" type="text" id="titulo" name="titulo" required>
+
+				<label for="contenido">Detalle del Evento</label>
+
+				<textarea class="ico descripcion" name="contenido" id="contenido" required></textarea>
+
+				<label for="fecha">Fecha del evento</label>
+				<input type="text" data-role="date" id="fecha" required>
+
+				<label for="categoria">¿Evento Colectivo?</label>
+					<select name="categoria" id="categoria" data-role="slider">
+
+						<option value="1">Sí</option>
+						<option value="2">No</option>
+
+					</select>
+
+				<input type="submit" value="Enviar" data-transition="slidedown">
+			</form>
+		</div>
+	</div>
+
+	<!-- /Nuevo Eventos -->
+
+	<!-- Frase del Día -->
+	<div data-role="page" id="frase">
+		<div data-role="header" class="header">
+		<a href="#menu" class="back" data-transition="flow" data-direction="reverse"></a>
+			<h1>Frase del día</h1>
+		</div>
+
+		<div data-role="content">
+			<div class="fraseCompleta">
+				<p>"El nueve de Mayo del 2016 Hernán Beati aprobará a todos los Alumnos de Programación de 4º en Multimedia - Maimónides" </p><h2 class="author">Germán Figueroa</h2>
+			</div>
+
+			<div class="fraseCompleta">
+				<p>"Ojalá se te acabe la mirada constante, la palabra precisa, la sonrisa perfecta. Ojalá pase algo que te borre de pronto." </p><h2 class="author">Silvio Rodriguez</h2>
+			</div>
+		</div>
+
+	</div>
+	<!-- /Frase del Día -->
+
+	<script type="text/javascript" src="js/funciones.js"></script>
+	</body>
+	</html>

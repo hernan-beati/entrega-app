@@ -1,0 +1,308 @@
+
+@import '_variables';
+@import '_mixins';
+
+/* General */
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+header{
+	margin-top:20px;
+	height:120px;
+	background: url(../images/myImg/logo.png) no-repeat center;	
+}
+p,span,h1,h2,h3,h4,h5,h6{
+		text-shadow:0 0 0 !important;
+}
+.header{
+		background-color:$grey !important;
+		color: $white !important;
+		border:none !important;
+		text-shadow:0 0 0 !important;
+		font-size: 14px;
+	}
+.lightGreen{ background-color:$lightGreen;}
+.yellow{ background-color:$yellow;}
+.red{ background-color:$red;}
+.blueMenu{background-color:$blueMenu;}
+.nonMargin{
+	margin:0 !important;
+}
+.nonPadding{
+	padding: 0 !important;
+}
+.separator{
+	height:8px;
+}
+.wrapper{ 
+	overflow:hidden;
+	}
+.date{
+	font-size:12px; 
+	font-style:italic;
+	color:$greyText;
+	margin-top:5px;}
+.card{
+	@include boxShadow;
+	margin:5px 0px 20px 0px;
+}
+.card-icons{
+		float: right;
+		img{
+			margin:10px;
+		}
+	}
+.fixed{
+	position:fixed;
+	width:100%;
+}
+.relative{
+	position:relative;
+}
+/* !General */
+
+/* Dynamic classes */
+.fav:after{
+	margin:10px;
+	content:url(../images/myImg/fav.png);
+}
+/* !Dynamic classes*/
+
+/* Navbar */
+.back{
+	background-color: transparent !important;
+	border:none !important;
+	content:url(../images/myImg/arrow-l.png);
+	box-shadow:none;
+	padding-top:5px;
+}
+
+/* Reset Button hover/active*/
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.ui-input-text.ui-focus,
+.ui-input-search.ui-focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow:none !important;
+    box-shadow: none!important;    
+}
+/* !Reset Button hover/active*/
+
+
+/* !Navbar*/
+
+#welcomeScreen{
+	background-color: $blueMenu;
+}
+
+#noInternet{
+	background-color: $blueMenu;
+	text-align:center;
+	h2{
+		color:#fff;
+	}
+}
+
+/* Login */
+#login{
+	background-color: $blue;
+	text-align: center;
+	text-shadow:0 0 0 !important;
+	h1{
+		color: $lightBlue;
+		margin-top: 0;
+	}
+	form{
+		margin:20px;
+	}
+	input{
+			color:$greyText;
+			padding-left: 40px;
+	}
+	.ico{
+			margin-top: 8px;
+			margin-left: 10px;
+			line-height: 6px;
+	}
+	.user{
+		background: url(../images/myImg/user.gif) no-repeat;	
+	}
+	.lock{
+		background: url(../images/myImg/lock.gif) no-repeat;	
+	}
+	.ui-btn{
+		margin:20px;
+		text-shadow:0 0 0 !important;
+		border: 0;
+	}
+	#btn-login{
+		background-color: $lightBlue;
+		color:$white;
+	}
+	#facebook{
+		color: $blue;
+	}
+	p{
+		color:$white;
+		a{
+			color:$white;
+			text-decoration: none;
+		}
+	}
+}
+/* !Login */
+
+/* Menu*/
+#menu{
+	font-size:0.7em;
+	.header{
+		background-color:$grey;
+		color: $white;
+		text-shadow:0 0 0 !important;
+	}
+	ul{	
+		text-align: center;
+		li{
+			width: 50%;
+			height: 0;
+			padding-bottom: 50%;
+				img{	
+					margin: auto;
+					padding-top:15%;
+					width: 40%;
+					display: block;
+					padding-bottom:10%;
+				}
+				a{
+				color:white;
+				overflow: hidden;
+				text-decoration: none;
+				text-shadow: 0 0 0 !important;
+				}
+		}
+	}
+}
+/* !Menu */
+
+/* Agenda */
+#eventos{
+	background-color:$bgGrey;
+	font-size:10px;
+	.month{
+		font-size: 14px;
+		text-align: center;
+		padding: 5px 0;
+		background-color: $blueMenu;
+		color:white;
+	}
+	ul{
+		margin:0;
+		padding:0;
+		li{
+			margin-bottom:7px;
+			padding:0;
+		}
+	}
+	.card-wrapper{
+		margin-top:80px;
+	}
+	.card{
+		h1{}
+		background-color:$white;
+		padding:0 5px;
+		overflow:hidden;
+		border-left: 5px solid $red;
+	.wrapper{
+		h1{
+			margin:0;
+			font-size:20px;
+			font-weight:lighter;
+		}
+		.img{
+			float:left; 
+			width:15%;
+			text-align: center;
+		}
+		.text{
+			float:left; width:100%;
+			font-size: 12px;
+		}
+	}
+}
+	.footer{
+		text-align: center;
+		padding: 10px 0;
+			a{
+			border: none !important;
+			background: transparent !important;
+			box-shadow:none !important;
+			margin:0;
+			padding:0;
+		}
+	}
+}
+
+#agregarEvento{
+	label{
+		font-size: 20px;
+		color: $blue;
+	}
+	textarea{
+		height: 120px !important;
+		background-color:#fff !important;
+		margin:0 !important;
+	}
+	.ico{
+		padding-left:35px;
+		margin-top: 8px;
+		margin-left: 5px;		
+	}
+	.descripcion{
+		background: url(../images/myImg/description.gif) no-repeat;		
+	}
+	.tag{
+		background: url(../images/myImg/tag.gif) no-repeat;	
+	}
+}
+#frase{	
+	background-color: $red;
+	text-align:center;
+	.fraseCompleta{
+		border-bottom:1px solid $white;
+		margin-top:10px;
+		margin-bottom: 10px;
+		overflow: hidden;
+	img{
+		width: 50%;
+	}
+	p{
+		font-family: 'Bad Script', cursive;
+		color:$white;
+		font-size: 1.5em;
+	}
+	.author{
+		float: right;
+		font-size: 20px;
+		font-style:italic;
+		margin-right: 10px;
+		font-style: italic;
+		}
+	}
+}
+/* !Agenda*/
+/* 
+
+* Para que una imagen ocupe toda la línea la convierto en bloque display:block;
+* Para que un cuadrado de bloques (div,li,lo que sea) sean líquidos tengo que
+* jugar con su margen y padding: 	width: 50%;
+									height: 0;
+									padding-bottom: 50%;
+
+*/
