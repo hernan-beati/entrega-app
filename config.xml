@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="ar.com.shup.shupapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Entrega Final</name>
+    <name>Multi-medias</name>
     <description>
-            Lo que sea que describa la app.
+            Aplicación realizada para la Universidad Maimónies como parte de la materia 
+            progamación Multimedial III
     </description>
     <author email="juanmariamigliore@gmail.com" href="http://www.elContactoDeLaApp.com.ar">
         Migliore Juan María
