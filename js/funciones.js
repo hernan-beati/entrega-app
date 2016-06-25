@@ -1,35 +1,21 @@
 
 $(document).ready(function(){
-
-
 // Chequeo conexión //
-
 if(navigator.onLine){
-
-//alert("online");
 $( "body" ).pagecontainer( "change", "#login");
-
 }
 
 else{
-
-	//alert("offline");
 	$( "body" ).pagecontainer( "change", "#noInternet");
-
 	$("#intentarNuevamente").on("click", function(){
-
-		//alert("clicked");
-
 	if(checkConection()){
 		$( "body" ).pagecontainer( "change", "#login");
 	}
-
 });
 
 }
 
 function checkConection(){
-
 	if(navigator.onLine){
 		return true;
 	}
@@ -38,10 +24,6 @@ function checkConection(){
 	}
 }
 // !Chequeo conexión //
-
-
-
-
 
 
 /* Login Form */
@@ -59,6 +41,12 @@ function checkConection(){
 		    data: {
 		    	usuario:datosUsuario,
 		    	password:datosPassword
+		    },
+		    beforeSend: function(){
+		    	$(".modal").show();
+		    },
+		    complete: function(){
+		    	$(".modal").hide();
 		    },
 		    
 		    success: function(output) {
@@ -131,26 +119,53 @@ function checkConection(){
 	}
 
 
-	function consultaAjax(value,id_value,titulo_val,contenido_val,fecha_val,categoria_val){
+	function consultaAjax(value,id_value){
 
 		$.ajax({ 
 			url: 'http://juanmamigliore.com.ar/app-php/consultas.php',
+			type: 'post',
 		    data: {
 		    	action: value,
 		    	id: id_value,
-		    	titulo: titulo_val,
-		    	contenido:contenido_val,
-		    	fecha:fecha_val,
-		    	categoria:categoria_val
+		    	
 		    },
-		    type: 'post',
+		    beforeSend: function(){
+		    	$(".modal").show();
+		    },
+		    complete: function(){
+		    	$(".modal").hide();
+		    },
 		    success: function(output) {
-		    	//window.location.reload(true);
-		    	//refreshPage();
 
 		    }
 		});
 	}
+
+	function addEventAjax(titulo_val,contenido_val,fecha_val,categoria_val){
+		$.ajax({
+			url: 'http://juanmamigliore.com.ar/app-php/newEvent.php',
+			type: 'post',
+			data: {
+		    	titulo: titulo_val,
+		    	contenido:contenido_val,
+		    	fecha:fecha_val,
+		    	categoria:categoria_val
+			},
+			beforeSend: function(){
+		    	$(".modal").show();
+		    },
+		    complete: function(){
+		    	$(".modal").hide();
+		    },
+		    success: function(output) {
+		    	alert("Evento Agregado");
+		    	var myArray = JSON.parse(output);
+		    	console.log(myArray);
+		    	refreshList(myArray[0],myArray[1],myArray[2],myArray[3],myArray[4]);
+		    }
+		});
+	}
+
 
 
 
@@ -163,14 +178,10 @@ function checkConection(){
 	    });
 	}
 
+
 	function modifyFavourite(id){
 
 		consultaAjax('favourite',id);
-	}
-
-	function addEvent(titulo,contenido,fecha,categoria){
-
-		consultaAjax('event','-1',titulo,contenido,fecha,categoria);
 	}
 
 	function modifyEventStatus(id){
@@ -183,6 +194,7 @@ function checkConection(){
 	    var $li = $(this).closest('li[data-id]');
 	    var id = $li.data('id');
 	    modifyEventStatus(id);
+	    $li.hide();
 	    return false;
 	 });
 
@@ -190,6 +202,7 @@ function checkConection(){
 	    var $li = $(this).closest('li[data-id]');
 	    var id = $li.data('id');
 	    modifyFavourite(id);
+	    $li.appendTo('#favoritos');
 	    return false;
 	});
 
@@ -201,10 +214,27 @@ function checkConection(){
 			var contenido = $("#contenido").val();
 			var fecha = $("#fecha").val();
 			var categoria = $('#categoria').val();
-
-			addEvent(titulo,contenido,fecha,categoria);
+			addEventAjax(titulo,contenido,fecha,categoria);
 			
 	});
+
+
+	function refreshList(titulo,contenido,fecha,categoria,last_id){
+		$icons='<a href="#" class="fav-handler"><img src="images/myImg/star.png"></a><a href="#" class="delete-handler"><img src="images/myImg/trash.png" alt=""></a>';
+		$myFakeCard = $("<li class='card' data-id="+last_id+">").append($("<div class='wrapper'>")
+				.append($("<div class='text'></div>").append($("<h1>"+ titulo +"</h1><p class='date'>"+ fecha +"</p><p>"+ contenido +"</p>")))
+				.append($("<div class='card-icons'>").append($icons))); 
+
+
+		if(categoria==1){
+			$('#colectivos .card-wrapper').append($myFakeCard);
+		}
+		else if(categoria==2){
+			$('#personales .card-wrapper').append($myFakeCard);
+		}
+			
+
+	}
 
 });
 	/* !Formulario */
