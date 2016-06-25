@@ -209,7 +209,6 @@ function checkConection(){
 		/* Formulario */
 	$('#nuevoEvento').submit(function() { 
 			$( "body" ).pagecontainer( "change", "#menu");
-			alert("yey");
 			var titulo = $("#titulo").val();
 			var contenido = $("#contenido").val();
 			var fecha = $("#fecha").val();
